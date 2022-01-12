@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros</title>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/styleS.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <!--Barra-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img class="logotipo" src="img/logo.png" alt="Logotipo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="galeria.html">Galería</a>
+                </li>
+            </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="¿Que desea buscar?" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <!--fin container-->
+    <li>
+        <a class="navbar-brand"data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img class="logotipo" src="img/icono/user.png" alt="" style="width:50px;height:65px;border:0;">
+        </a>
+    </li>
+</nav>
+  <!-- Acerca de nosotros -->
+  <section class="acerca-de">
+    <div class="info-container">
+      <h1>Acerca de Nosotros</h1>
+      <p>Somos una agencia de viajes en Chile. Ofrecemos tours que incluyen navegación por los glaciares de la Patagonia, rafting y tours para toda la familia.</p>
+
+      <h2>Misión</h2>
+      <p>Nuestra misión es ofrecer una experiencia de viaje única para todos nuestros clientes, cumpliendo con altos
+        estándares de calidad, comodidad y seguridad.</p>
+
+      <h2>Visión</h2>
+      <p>Ser una de las mejores agencias de turismo en Chile, reconocida por la confianza y seguridad que le ofrecemos a
+        nuestros clientes.</p>
+      <div class="about-gallery">
+        <img src="img/conguillio.jpg" alt="conguillio">
+        <img src="img/cajon.jpg" alt="cajon-del-maipo">
+        <img src="img/austral.jpg" alt="austral">
+      </div>
+      <div class="embed-container">
+        <iframe src="https://www.youtube.com/embed/RK3Ou8vq84Y" frameborder="0" allowfullscreen></iframe>
+      </div>
+  </section>
+  <div class="container" style="max-width: 50%; margin-bottom: 40px;">
+    <h3 style="text-align: center;">ENCUENTRANOS</h3>
+    <div id="map"></div>
+    <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+  </div>
+
+
+
+
+    <!--Footer-->
+
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+          <div class="box">
+              <figure>
+                  <a href="index.html">
+                      <img src="img/logo.png" alt="Logo Imagine Tours"> 
+                  </a>
+              </figure>
+          </div>
+
+          <div class="box">
+              <h2>SOBRE NOSOTROS</h2>
+              <p>Scarleth Martinez - Javier Bastias</p> 
+                <p>Felipe Conduela</p>
+          </div>
+
+          <div class="box">
+              <h2>SIGUENOS</h2>
+              <div class="red-social">
+                  <a href="https://www.facebook.com/">
+                      <img class="logotipo" src="img/icono/facebook.png" alt="" style="width:50px;height:65px;border:0;">
+                  </a>
+                  <a href="https://www.instagram.com/?hl=es-la">
+                      <img class="logotipo" src="img/icono/instagram.png" alt="" style="width:50px;height:65px;border:0;">
+                  </a>
+                  <a href="https://twitter.com/?lang=es">
+                      <img class="logotipo" src="img/icono/twitter.png" alt="" style="width:50px;height:65px;border:0;">  
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                      <img class="logotipo"  src="img/icono/youtube.png" alt="" style="width:50px;height:65px;border:0;">  
+                  </a>     
+              </div>
+          </div>
+      </div>
+
+      <div class="grupo-2">
+          <small>&copy; 2022 <b>Imagine Tours</b> - Todos los Derechos Reservados.</small>
+      </div>
+  </footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inicie sesion</h5>
+        <button type="button"  data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <a href="registrarse2.html">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrarse</button>
+        </a>
+        <button type="submit" class="btn btn-primary"data-bs-dismiss="modal">Ingresar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
