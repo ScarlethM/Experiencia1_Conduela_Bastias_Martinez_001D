@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<!--Los componentes externos quedan dentro del head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/estilos.css">
+    <link rel="stylesheet" href="../static/css/styleS.css">
+
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/funciones.js"></script>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!--Barra-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index">
+                <img class="logotipo" src="../static/img/logo.png" alt="Logotipo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="galeria">Galería</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Reserva
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="form_reserva">Ingresar</a></li>
+                            <li><a class="dropdown-item" href="ver">Listado</a></li>
+
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="¿Que desea buscar?" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <!--fin container-->
+        <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="logotipo" src="../static/img/icono/user.png" alt=""
+                    style="width:50px;height:65px;border:0;">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_authenticated %}
+                <li>
+                    <a> Hola {{ user.username }} </a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}" style="text-align: center"> Cerrar Sesión </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'login' %}"> Iniciar Sesión</a>
+                </li>
+                <li>
+                    <a href="{% url 'registrarse' %}">Registrarse</a>
+                </li>
+                {% endif %}
+            </ul>
+        </li>
+    </nav>
+    <h1 style="text-align: center; font-family: 'Times New Roman';">Regístrate</h1>
+
+    <div class="container, col-sm-6" style="margin: auto;">
+        <div class="row">
+
+        </div>
+        <form>
+            <!--Usuario-->
+
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Completo"
+                    required>
+            </div>
+            <label for="Usuario">Usuario</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
+
+            <!--Contraseña-->
+            <label for="Contraseña">Contraseña</label>
+            <br>
+            <input type="password" class="form-control" id="password" name="password" placeholder="contraseña" required>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <label for="fecha">Fecha de nacimiento</label>
+            <input type="date" class="form-control" name="fecha" min="1900-01-01" required>
+            <br>
+            <input type="submit" value="Registrar" class="button">
+            <br>
+            <br>
+            <p style="text-align: center;">Al registarte, aceptas nuestas condiciones de uso y política de privacidad.
+            </p>
+
+            <p style="text-align: center;">¿Ya tienes cuenta? <a class="link" href="{% url 'login' %}">Iniciar
+                    Sesión</a></p>
+
+
+        </form>
+    </div>
+    <br>
+    <!--Footer-->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="index">
+                        <img src="../static/img/logo.png" alt="Logo Imagine Tours">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Scarleth Martinez - Javier Bastias</p>
+                <p>Felipe Conduela</p>
+            </div>
+
+            <div class="box">
+                <h2>SÍGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/">
+                        <img class="logotipo" src="../static/img/icono/facebook.png" alt=""
+                            style="width:50px;height:65px;border:0;">
+                    </a>
+                    <a href="https://www.instagram.com/?hl=es-la">
+                        <img class="logotipo" src="../static/img/icono/instagram.png" alt=""
+                            style="width:50px;height:65px;border:0;">
+                    </a>
+                    <a href="https://twitter.com/?lang=es">
+                        <img class="logotipo" src="../static/img/icono/twitter.png" alt=""
+                            style="width:50px;height:65px;border:0;">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <img class="logotipo" src="../static/img/icono/youtube.png" alt=""
+                            style="width:50px;height:65px;border:0;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>Imagine Tours</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+</body>
+
+</html>
